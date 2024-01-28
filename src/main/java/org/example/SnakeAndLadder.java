@@ -4,6 +4,7 @@ import org.example.dto.Dice;
 import org.example.dto.GameBoard;
 import org.example.dto.Pipe;
 import org.example.dto.Players;
+import org.example.service.PlayGame;
 
 import java.util.*;
 
@@ -28,7 +29,7 @@ public class SnakeAndLadder {
         playersCurrentPostion.put(player1,0);
         playersCurrentPostion.put(player2,0);
 
-        GameBoard gameBoard = GameBoard.builder()
+        PlayGame game = PlayGame.builder()
                 .boardSize(100)
                 .ladders(ladders)
                 .snakes(snakes)
@@ -37,6 +38,6 @@ public class SnakeAndLadder {
                 .playersCurrentPosition(playersCurrentPostion)
                 .build();
 
-        gameBoard.startGame();
+        game.startGame();
     }
 }
